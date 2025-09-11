@@ -3,9 +3,1340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Alok Yadav - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+       /* Complete Responsive CSS */
+
+:root {
+    --dark-bg: #0f0f1a;
+    --neon-blue: #00e5ff;
+    --neon-purple: #8e2de2;
+    --neon-pink: #ff0080;
+    --text-light: #e0e0e0;
+    --card-bg: rgba(26, 26, 46, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--dark-bg);
+    color: var(--text-light);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Universal Background for all sections */
+.universal-bg {
+    background: 
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(142, 45, 226, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 50% at 80% 0%, rgba(0, 229, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 100% 80% at 50% 100%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+        linear-gradient(180deg, rgba(15, 15, 26, 0.95) 0%, rgba(15, 15, 26, 0.98) 100%);
+    position: relative;
+}
+
+.universal-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 229, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(142, 45, 226, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(255, 0, 128, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.neon-glow {
+    box-shadow: 0 0 5px var(--neon-blue), 0 0 15px var(--neon-blue), 0 0 30px var(--neon-purple), 0 0 60px var(--neon-purple);
+}
+
+.neon-glow-pink {
+    box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
+}
+
+.glass-morphism {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Container Responsive */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Navigation Responsive */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+nav .animated-text {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    flex-shrink: 0;
+}
+
+.navbar {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    white-space: nowrap;
+}
+
+.navbar a:hover {
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--neon-blue);
+    text-shadow: 0 0 8px var(--neon-blue);
+    transform: translateY(-2px);
+}
+
+nav a[href="#projects"] {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.8rem, 3vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Hero Section Responsive */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: clamp(6rem, 15vh, 10rem) 1rem clamp(2rem, 5vh, 4rem);
+    background: 
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(142, 45, 226, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 50% at 80% 0%, rgba(0, 229, 255, 0.2) 0%, transparent 70%),
+        radial-gradient(ellipse 100% 80% at 50% 100%, rgba(255, 0, 128, 0.15) 0%, transparent 70%);
+}
+
+.hero-section .space-y-8 {
+    max-width: 100%;
+    width: 100%;
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 0.9;
+    margin-bottom: clamp(1rem, 3vh, 1.5rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+
+.hero-section .animated-text {
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
+    font-weight: 700;
+    margin-bottom: clamp(0.5rem, 2vh, 1rem);
+    display: block;
+}
+
+.hero-section h2 {
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-weight: 500;
+    margin-bottom: clamp(1rem, 3vh, 2rem);
+    line-height: 1.3;
+    padding: 0 1rem;
+}
+
+.hero-section p {
+    font-size: clamp(0.9rem, 1.8vw, 1.25rem);
+    line-height: 1.6;
+    max-width: 60ch;
+    font-weight: 400;
+    margin: 0 auto clamp(1.5rem, 4vh, 2.5rem);
+    padding: 0 1rem;
+}
+
+.hero-section .pt-6 a {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    display: inline-block;
+    border-radius: 2rem;
+}
+
+/* Animated Elements */
+.animated-text {
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-blue));
+    background-size: 300% 300%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient-animation 4s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 5px var(--neon-blue), 0 0 15px var(--neon-blue); }
+    50% { box-shadow: 0 0 10px var(--neon-purple), 0 0 30px var(--neon-purple), 0 0 50px var(--neon-pink); }
+}
+
+.card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+/* Section Responsive */
+section {
+    padding: clamp(2rem, 8vw, 6rem) 0;
+}
+
+section h2 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: clamp(2rem, 6vw, 4rem);
+    line-height: 1.1;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* About Section Responsive */
+#about .container {
+    max-width: 1200px;
+}
+
+#about .grid {
+    display: grid;
+    gap: clamp(2rem, 6vw, 4rem);
+    align-items: center;
+}
+
+.profile-image-enhanced {
+    width: clamp(200px, 40vw, 280px);
+    height: clamp(200px, 40vw, 280px);
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(50px, 12vw, 80px);
+    color: white;
+    margin: 0 auto;
+    position: relative;
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.profile-image-enhanced::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-blue));
+    border-radius: 50%;
+    z-index: -1;
+    animation: gradient-animation 4s linear infinite;
+}
+
+#about .space-y-8 {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 4vw, 2rem);
+}
+
+#about .glass-morphism {
+    padding: clamp(1.5rem, 4vw, 2rem);
+    border-radius: 1rem;
+}
+
+#about .glass-morphism p {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+#about h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+#about .grid.grid-cols-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+#about .grid.grid-cols-2 .glass-morphism {
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+#about .grid.grid-cols-2 span {
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    font-weight: 600;
+}
+
+/* Skills Section Responsive */
+#skills .container {
+    max-width: 1400px;
+}
+
+#skills .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+.skill-icon-3d {
+    width: clamp(60px, 15vw, 70px);
+    height: clamp(60px, 15vw, 70px);
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(24px, 6vw, 28px);
+    color: white;
+    margin: 0 auto 1.5rem;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 
+        0 10px 30px rgba(0, 229, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+#skills .card-hover {
+    padding: clamp(1.5rem, 4vw, 2rem);
+    border-radius: 1rem;
+    text-align: center;
+}
+
+#skills .card-hover h3 {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#skills .card-hover p {
+    font-size: clamp(0.75rem, 1.8vw, 0.8rem);
+    margin-bottom: 1rem;
+}
+
+/* Projects Section Responsive */
+#projects .container {
+    max-width: 1400px;
+}
+
+#projects .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.project-visual {
+    height: clamp(150px, 25vw, 180px);
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(32px, 8vw, 40px);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.project-visual::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+#projects .card-hover {
+    padding: clamp(1.5rem, 4vw, 2rem);
+    border-radius: 1rem;
+}
+
+#projects .card-hover h3 {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+#projects .card-hover p {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+#projects .flex.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#projects .card-hover span {
+    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
+    padding: 0.4rem 0.8rem;
+    font-weight: 600;
+    border-radius: 1rem;
+}
+
+#projects .card-hover .text-right a {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-weight: 600;
+}
+
+/* Experience Section Responsive */
+#experience .container {
+    max-width: 1000px;
+}
+
+.experience-timeline {
+    position: relative;
+    padding-left: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -8px;
+    top: 2rem;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+#experience .card-hover {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: 1rem;
+    margin-left: clamp(0.5rem, 2vw, 0.5rem);
+}
+
+#experience .flex.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+#experience .card-hover h3 {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#experience .card-hover .text-lg {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+#experience .card-hover p {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    line-height: 1.6;
+}
+
+/* Contact Section Responsive */
+#contact .container {
+    max-width: 1200px;
+}
+
+#contact .grid {
+    display: grid;
+    gap: clamp(2rem, 6vw, 4rem);
+}
+
+#contact h3 {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+#contact .glass-morphism {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: 1rem;
+}
+
+#contact .space-y-10 {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+#contact .space-y-6 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#contact .space-y-8 {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+#contact label {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.contact-input {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    padding: clamp(0.75rem, 2.5vw, 0.875rem) clamp(1rem, 3vw, 1.25rem);
+    border-radius: 0.75rem;
+    width: 100%;
+    color: var(--text-light);
+}
+
+.contact-input:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+    outline: none;
+}
+
+#contact button {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: 600;
+    padding: clamp(0.75rem, 2.5vw, 0.875rem) clamp(1rem, 3vw, 1.5rem);
+    border-radius: 0.75rem;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.social-icon-enhanced {
+    width: clamp(50px, 12vw, 60px);
+    height: clamp(50px, 12vw, 60px);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-blue);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    font-size: clamp(16px, 4vw, 24px);
+    font-weight: bold;
+    position: relative;
+}
+
+.social-icon-enhanced:hover {
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    color: white;
+    transform: scale(1.2) rotateY(360deg);
+    box-shadow: 0 0 30px var(--neon-blue);
+}
+
+/* Footer Responsive */
+footer {
+    padding: clamp(2rem, 6vw, 3rem) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer .text-4xl {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+footer .text-xl {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+footer .text-lg {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    margin-bottom: 0.5rem;
+}
+
+footer .text-sm {
+    font-size: clamp(0.8rem, 1.8vw, 0.85rem);
+}
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), var(--neon-purple), var(--neon-pink), transparent);
+    margin: clamp(2rem, 6vw, 4rem) 0;
+}
+
+/* Particles */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    animation: particle-float 10s infinite linear;
+}
+
+@keyframes particle-float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fade-in-down 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Hover Effects */
+.card-hover:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 
+        0 20px 40px rgba(0, 229, 255, 0.2),
+        0 0 25px rgba(142, 45, 226, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 640px) {
+    .container {
+        padding: 0 2rem;
+    }
+    
+    #about .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    #contact .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    #skills .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #projects .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    nav {
+        padding: 1rem 2rem;
+    }
+    
+    #skills .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    #about .grid.grid-cols-2 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .card-hover:hover {
+        transform: translateY(-12px) scale(1.02);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 3rem;
+    }
+    
+    #projects .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    nav {
+        padding: 1rem 3rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        padding: 0 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 5rem 0.5rem 2rem;
+    }
+    
+    section {
+        padding: 2rem 0;
+    }
+    
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    #about .grid.grid-cols-2 {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    #skills .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    #projects .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .experience-timeline {
+        padding-left: 1rem;
+    }
+    
+    #experience .card-hover {
+        margin-left: 0.25rem;
+        padding: 1rem;
+    }
+}
+    </style>
 </head>
 <body>
-    
+    <!-- Floating Particles Background -->
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 5s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 7s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-morphism">
+        <nav class="container mx-auto flex items-center justify-between px-6 py-4">
+            <a href="#home" class="text-3xl font-bold animated-text">AY</a>
+            <div class="navbar hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-white font-medium hover:text-neon-blue transition-all duration-300">About</a>
+                <a href="#skills" class="text-white font-medium hover:text-neon-blue transition-all duration-300">Skills</a>
+                <a href="#projects" class="text-white font-medium hover:text-neon-blue transition-all duration-300">Projects</a>
+                <a href="#experience" class="text-white font-medium hover:text-neon-blue transition-all duration-300">Experience</a>
+                <a href="#contact" class="text-white font-medium hover:text-neon-blue transition-all duration-300">Contact</a>
+            </div>
+            <a href="#projects" class="px-6 py-2 glass-morphism text-neon-blue rounded-full text-sm font-semibold hover:bg-neon-blue hover:text-dark-bg transition-all duration-300 neon-glow">
+                Explore My Work ✨
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center text-center px-4 universal-bg">
+        <div class="space-y-8 max-w-5xl mx-auto">
+            <div class="animate-fade-in-down" style="animation-delay: 0.2s;">
+                <h1 class="text-7xl md:text-9xl font-bold text-white tracking-tighter mb-4">
+                    Alok Yadav
+                </h1>
+                <div class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="animated-text">✨ Creative Visionary</span>
+                </div>
+            </div>
+            <h2 class="text-2xl md:text-4xl font-semibold text-gray-300 tracking-wide animate-fade-in-up" style="animation-delay: 0.4s;">
+                🎨 3D Designer | 🎯 UI/UX Enthusiast | 📊 Aspiring Data Scientist
+            </h2>
+            <p class="text-lg md:text-2xl font-light text-text-light max-w-3xl mx-auto animate-fade-in-up leading-relaxed" style="animation-delay: 0.6s;">
+                Crafting immersive 3D experiences, designing intuitive interfaces, and transforming data into compelling visual stories that captivate and inspire.
+            </p>
+            <div class="pt-6 animate-fade-in-up" style="animation-delay: 0.8s;">
+                <a href="#projects" class="inline-block px-10 py-4 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink text-white font-bold rounded-full text-xl hover:scale-110 transform transition-all duration-300 neon-glow shadow-2xl">
+                    🚀 Explore My Universe
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- About Me Section -->
+    <section id="about" class="universal-bg py-24 px-4">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-5xl md:text-7xl font-bold text-center mb-20 animated-text">🌟 About Me</h2>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="profile-image-enhanced">
+                    AY
+                </div>
+                <div class="space-y-8">
+                    <div class="glass-morphism p-8 rounded-2xl">
+                        <p class="text-xl leading-relaxed mb-6">
+                            I'm <span class="text-neon-blue font-semibold">Alok Yadav</span>, a passionate B.Tech student at ABES Engineering College, where creativity meets technology. I specialize in crafting stunning 3D experiences, designing intuitive user interfaces, and exploring the fascinating world of data science.
+                        </p>
+                        <p class="text-lg leading-relaxed text-gray-300">
+                            My journey is driven by an insatiable curiosity to push the boundaries of digital design and create experiences that not only look beautiful but also solve real-world problems.
+                        </p>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-neon-blue flex items-center gap-3">
+                            ⭐ What Defines Me:
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="glass-morphism px-6 py-4 rounded-xl text-center">
+                                <div class="text-3xl mb-2">🎨</div>
+                                <span class="text-neon-purple font-semibold">Creative</span>
+                            </div>
+                            <div class="glass-morphism px-6 py-4 rounded-xl text-center">
+                                <div class="text-3xl mb-2">🙏</div>
+                                <span class="text-neon-blue font-semibold">Humble</span>
+                            </div>
+                            <div class="glass-morphism px-6 py-4 rounded-xl text-center">
+                                <div class="text-3xl mb-2">💡</div>
+                                <span class="text-neon-pink font-semibold">Innovative</span>
+                            </div>
+                            <div class="glass-morphism px-6 py-4 rounded-xl text-center">
+                                <div class="text-3xl mb-2">🚀</div>
+                                <span class="text-neon-blue font-semibold">Tech Enthusiast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="universal-bg py-24 px-4">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-5xl md:text-7xl font-bold text-center mb-20 animated-text">🛠️ My Arsenal</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
+                    <div class="skill-icon-3d">🎨</div>
+                    <h3 class="text-xl font-semibold mb-3 text-neon-blue">Spline</h3>
+                    <p class="text-sm text-gray-400 mb-4">3D Design Master</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
+                    <div class="skill-icon-3d" style="animation-delay: 0.5s;">🎯</div>
+                    <h3 class="text-xl font-semibold mb-3 text-neon-purple">Figma</h3>
+                    <p class="text-sm text-gray-400 mb-4">UI/UX Wizard</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-neon-purple to-neon-pink h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
+                    <div class="skill-icon-3d" style="animation-delay: 1s;">⚡</div>
+                    <h3 class="text-xl font-semibold mb-3 text-neon-pink">Framer</h3>
+                    <p class="text-sm text-gray-400 mb-4">Prototype Ninja</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-neon-pink to-neon-blue h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
+                    <div class="skill-icon-3d" style="animation-delay: 1.5s;">⚛️</div>
+                    <h3 class="text-xl font-semibold mb-3 text-neon-blue">React</h3>
+                    <p class="text-sm text-gray-400 mb-4">Frontend Architect</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple h-2 rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
+                    <div class="skill-icon-3d" style="animation-delay: 2s;">🌐</div>
+                    <h3 class="text-xl font-semibold mb-3 text-neon-purple">HTML5</h3>
+                    <p class="text-sm text-gray-400 mb-4">Structure Expert</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-neon-purple to-neon-pink h-2 rounded-full" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
+                    <div class="skill-icon-3d" style="animation-delay: 2.5s;">🎨</div>
+                    <h3 class="text-xl font-semibold mb-3 text-neon-pink">CSS3</h3>
+                    <p class="text-sm text-gray-400 mb-4">Style Magician</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-neon-pink to-neon-blue h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
+                    <div class="skill-icon-3d" style="animation-delay: 3s;">📊</div>
+                    <h3 class="text-xl font-semibold mb-3 text-neon-blue">Power BI</h3>
+                    <p class="text-sm text-gray-400 mb-4">Data Analyst</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple h-2 rounded-full" style="width: 78%"></div>
+                    </div>
+                </div>
+                <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
+                    <div class="skill-icon-3d" style="animation-delay: 3.5s;">📈</div>
+                    <h3 class="text-xl font-semibold mb-3 text-neon-purple">Data Viz</h3>
+                    <p class="text-sm text-gray-400 mb-4">Story Teller</p>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-neon-purple to-neon-pink h-2 rounded-full" style="width: 82%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="universal-bg py-24 px-4">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-5xl md:text-7xl font-bold text-center mb-20 animated-text">🚀 My Creations</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="card-hover glass-morphism p-8 rounded-2xl">
+                    <div class="project-visual">
+                        🌍
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-neon-blue flex items-center gap-2">
+                        ✈️ Sync and Explore
+                    </h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">A cutting-edge travel platform featuring immersive 3D destinations, real-time booking, and AI-powered recommendations for the modern explorer.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple bg-opacity-20 text-neon-blue rounded-full text-xs font-semibold">React</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-purple to-neon-pink bg-opacity-20 text-neon-purple rounded-full text-xs font-semibold">CSS3</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-pink to-neon-blue bg-opacity-20 text-neon-pink rounded-full text-xs font-semibold">3D</span>
+                    </div>
+                    <div class="text-right">
+                        <a href="#" class="text-neon-blue hover:text-neon-purple transition-colors duration-300 font-semibold">View Project →</a>
+                    </div>
+                </div>
+                
+                <div class="card-hover glass-morphism p-8 rounded-2xl">
+                    <div class="project-visual">
+                        📚
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-neon-purple flex items-center gap-2">
+                        📖 Litzzo – Talking Book
+                    </h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">Revolutionary interactive storytelling platform with voice narration, animated 3D book models, and immersive reading experiences for all ages.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-purple to-neon-pink bg-opacity-20 text-neon-purple rounded-full text-xs font-semibold">Spline</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-pink to-neon-blue bg-opacity-20 text-neon-pink rounded-full text-xs font-semibold">3D Animation</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple bg-opacity-20 text-neon-blue rounded-full text-xs font-semibold">Interactive</span>
+                    </div>
+                    <div class="text-right">
+                        <a href="#" class="text-neon-purple hover:text-neon-pink transition-colors duration-300 font-semibold">View Project →</a>
+                    </div>
+                </div>
+                
+                <div class="card-hover glass-morphism p-8 rounded-2xl">
+                    <div class="project-visual">
+                        🌦️
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-neon-pink flex items-center gap-2">
+                        ☀️ Weather3D
+                    </h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">Next-generation weather visualization with stunning 3D environments, real-time meteorological data, and interactive climate simulations.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-pink to-neon-blue bg-opacity-20 text-neon-pink rounded-full text-xs font-semibold">Spline</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple bg-opacity-20 text-neon-blue rounded-full text-xs font-semibold">API Integration</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-purple to-neon-pink bg-opacity-20 text-neon-purple rounded-full text-xs font-semibold">Real-time</span>
+                    </div>
+                    <div class="text-right">
+                        <a href="#" class="text-neon-pink hover:text-neon-blue transition-colors duration-300 font-semibold">View Project →</a>
+                    </div>
+                </div>
+                
+                <div class="card-hover glass-morphism p-8 rounded-2xl">
+                    <div class="project-visual">
+                        🤖
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-neon-blue flex items-center gap-2">
+                        🎭 Meta AI Logo Animation
+                    </h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">Captivating brand animation featuring fluid motion graphics, dynamic transitions, and cutting-edge visual effects that bring AI to life.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple bg-opacity-20 text-neon-blue rounded-full text-xs font-semibold">Motion Graphics</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-purple to-neon-pink bg-opacity-20 text-neon-purple rounded-full text-xs font-semibold">Brand Design</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-pink to-neon-blue bg-opacity-20 text-neon-pink rounded-full text-xs font-semibold">Animation</span>
+                    </div>
+                    <div class="text-right">
+                        <a href="#" class="text-neon-blue hover:text-neon-purple transition-colors duration-300 font-semibold">View Project →</a>
+                    </div>
+                </div>
+                
+                <div class="card-hover glass-morphism p-8 rounded-2xl">
+                    <div class="project-visual">
+                        🎵
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-neon-purple flex items-center gap-2">
+                        🎶 Spotify Animated Intro
+                    </h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">Energetic opening sequence with synchronized audio-visual elements, particle systems, and dynamic typography for an unforgettable user experience.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-purple to-neon-pink bg-opacity-20 text-neon-purple rounded-full text-xs font-semibold">Audio Sync</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-pink to-neon-blue bg-opacity-20 text-neon-pink rounded-full text-xs font-semibold">Particles</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple bg-opacity-20 text-neon-blue rounded-full text-xs font-semibold">Typography</span>
+                    </div>
+                    <div class="text-right">
+                        <a href="#" class="text-neon-purple hover:text-neon-pink transition-colors duration-300 font-semibold">View Project →</a>
+                    </div>
+                </div>
+                
+                <div class="card-hover glass-morphism p-8 rounded-2xl">
+                    <div class="project-visual">
+                        📱
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-neon-pink flex items-center gap-2">
+                        💡 Interactive Portfolio
+                    </h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">This very website! A showcase of modern web design featuring glassmorphism, particle effects, and immersive user interactions.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-pink to-neon-blue bg-opacity-20 text-neon-pink rounded-full text-xs font-semibold">HTML5</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple bg-opacity-20 text-neon-blue rounded-full text-xs font-semibold">CSS3</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-neon-purple to-neon-pink bg-opacity-20 text-neon-purple rounded-full text-xs font-semibold">Responsive</span>
+                    </div>
+                    <div class="text-right">
+                        <a href="#" class="text-neon-pink hover:text-neon-blue transition-colors duration-300 font-semibold">You're Here! 🎉</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Experience Section -->
+    <section id="experience" class="universal-bg py-24 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-5xl md:text-7xl font-bold text-center mb-20 animated-text">💼 My Journey</h2>
+            <div class="space-y-12 max-w-4xl mx-auto">
+                <div class="experience-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="card-hover glass-morphism p-10 rounded-2xl ml-8">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="w-20 h-20 bg-gradient-to-br from-neon-blue via-neon-purple to-neon-pink rounded-2xl flex items-center justify-center text-white text-3xl font-bold shadow-2xl">
+                                G
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                    <h3 class="text-2xl font-semibold text-neon-blue mb-2">🎨 Graphics Team Lead</h3>
+                                    <span class="text-neon-purple font-semibold text-lg">2024 - Present</span>
+                                </div>
+                                <p class="text-neon-pink font-medium mb-4 text-lg">Genero'25 • Premier Tech Festival</p>
+                                <p class="text-gray-300 leading-relaxed mb-6">
+                                    Spearheading the visual identity of one of the region's largest tech festivals. Leading a team of 15+ designers to create 
+                                    compelling promotional materials, event branding, and interactive digital experiences that engage over 10,000+ attendees.
+                                </p>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-4 py-2 glass-morphism rounded-full text-sm text-neon-blue font-semibold">Team Leadership</span>
+                                    <span class="px-4 py-2 glass-morphism rounded-full text-sm text-neon-purple font-semibold">Brand Strategy</span>
+                                    <span class="px-4 py-2 glass-morphism rounded-full text-sm text-neon-pink font-semibold">Event Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-timeline">
+                    <div class="timeline-dot" style="background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));"></div>
+                    <div class="card-hover glass-morphism p-10 rounded-2xl ml-8">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="w-20 h-20 bg-gradient-to-br from-neon-purple via-neon-pink to-neon-blue rounded-2xl flex items-center justify-center text-white text-3xl font-bold shadow-2xl">
+                                P
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                    <h3 class="text-2xl font-semibold text-neon-purple mb-2">🎭 Creative Member</h3>
+                                    <span class="text-neon-blue font-semibold text-lg">2023 - Present</span>
+                                </div>
+                                <p class="text-neon-pink font-medium mb-4 text-lg">Pixel Club • Design Excellence Hub</p>
+                                <p class="text-gray-300 leading-relaxed mb-6">
+                                    Active contributor to innovative design projects, participating in intensive workshops, hackathons, and collaborative 
+                                    creative sessions. Mentoring junior members while continuously pushing the boundaries of digital art and design.
+                                </p>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-4 py-2 glass-morphism rounded-full text-sm text-neon-purple font-semibold">Mentorship</span>
+                                    <span class="px-4 py-2 glass-morphism rounded-full text-sm text-neon-pink font-semibold">Workshops</span>
+                                    <span class="px-4 py-2 glass-morphism rounded-full text-sm text-neon-blue font-semibold">Innovation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="universal-bg py-24 px-4">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-5xl md:text-7xl font-bold text-center mb-20 animated-text">🌟 Let's Create Magic</h2>
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="space-y-10">
+                    <div class="glass-morphism p-10 rounded-2xl">
+                        <h3 class="text-3xl font-semibold mb-8 text-neon-blue flex items-center gap-3">
+                            ✨ Ready to Collaborate?
+                        </h3>
+                        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                            I'm always excited to work on innovative projects, explore creative challenges, and bring extraordinary ideas to life. 
+                            Whether it's 3D design, UI/UX, or data visualization - let's build something amazing together!
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-6 p-4 glass-morphism rounded-xl">
+                                <div class="w-16 h-16 bg-gradient-to-br from-neon-blue to-neon-purple rounded-xl flex items-center justify-center text-2xl">
+                                    ✉️
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-lg text-neon-blue">Email Me</p>
+                                    <p class="text-gray-300">alok.yadav.creative@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-6 p-4 glass-morphism rounded-xl">
+                                <div class="w-16 h-16 bg-gradient-to-br from-neon-purple to-neon-pink rounded-xl flex items-center justify-center text-2xl">
+                                    📱
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-lg text-neon-purple">Call Me</p>
+                                    <p class="text-gray-300">+91 9876543210</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-6 p-4 glass-morphism rounded-xl">
+                                <div class="w-16 h-16 bg-gradient-to-br from-neon-pink to-neon-blue rounded-xl flex items-center justify-center text-2xl">
+                                    📍
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-lg text-neon-pink">Located In</p>
+                                    <p class="text-gray-300">Ghaziabad, Uttar Pradesh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-semibold mb-8 text-neon-blue flex items-center gap-3">
+                            🌐 Connect With Me
+                        </h4>
+                        <div class="flex gap-6 justify-center md:justify-start">
+                            <a href="#" class="social-icon-enhanced">
+                                <span class="text-sm font-bold">LI</span>
+                            </a>
+                            <a href="#" class="social-icon-enhanced">
+                                <span class="text-sm font-bold">GH</span>
+                            </a>
+                            <a href="#" class="social-icon-enhanced">
+                                <span class="text-sm font-bold">BE</span>
+                            </a>
+                            <a href="#" class="social-icon-enhanced">
+                                <span class="text-sm font-bold">IG</span>
+                            </a>
+                            <a href="#" class="social-icon-enhanced">
+                                <span class="text-sm font-bold">DR</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-hover glass-morphism p-10 rounded-2xl">
+                    <form class="space-y-8">
+                        <div>
+                            <label class="block text-lg font-medium mb-3 text-neon-blue">👋 What's your name?</label>
+                            <input type="text" class="contact-input w-full px-6 py-4 rounded-xl text-white text-lg" placeholder="Enter your awesome name...">
+                        </div>
+                        <div>
+                            <label class="block text-lg font-medium mb-3 text-neon-purple">📧 Your email address?</label>
+                            <input type="email" class="contact-input w-full px-6 py-4 rounded-xl text-white text-lg" placeholder="your.email@awesome.com">
+                        </div>
+                        <div>
+                            <label class="block text-lg font-medium mb-3 text-neon-pink">💭 What's on your mind?</label>
+                            <textarea rows="6" class="contact-input w-full px-6 py-4 rounded-xl text-white text-lg" placeholder="Tell me about your amazing project ideas..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink text-white font-bold rounded-xl text-xl hover:scale-105 transform transition-all duration-300 neon-glow shadow-2xl">
+                            🚀 Send Message to the Stars
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="universal-bg py-12 px-4 border-t border-glass-bg">
+        <div class="container mx-auto text-center">
+            <div class="mb-8">
+                <div class="text-4xl font-bold animated-text mb-4">AY</div>
+                <p class="text-xl text-gray-300">Crafting Digital Dreams Into Reality</p>
+            </div>
+            <div class="section-divider my-8"></div>
+            <p class="text-gray-400 text-lg">© 2025 Alok Yadav | Designed with ❤️, ☕, and lots of ✨</p>
+            <p class="text-sm text-gray-500 mt-2">Built with passion, powered by creativity</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add more floating particles dynamically
+            const particlesContainer = document.querySelector('.particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                particlesContainer.appendChild(particle);
+            }
+
+            // Add intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all cards and sections
+            document.querySelectorAll('.card-hover, .glass-morphism').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
