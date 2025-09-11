@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Books</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Alok Store</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Books</a>
+                    <ul class="dropdown">
+                        <li><a href="#">New Releases</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Genres</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Authors</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Popular Authors</a></li>
+                        <li><a href="#">Emerging Authors</a></li>
+                        <li><a href="#">Interviews</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#" id="sign-in-btn" class="login">Login</a></li>
+            </ul>
+        </nav>
+     
+    </header>
+
+    <!-- Modal for Sign In/Sign Up -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="form-container" id="sign-in-form">
+                <!-- <h2>Sign In</h2> -->
+                <form id="loginForm">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+            </div>
+
+            <div class="form-container" id="sign-up-form" style="display: none;">
+                <h2>Sign Up</h2>
+                <form id="registerForm">
+                    <label for="signup-username">Username:</label>
+                    <input type="text" id="signup-username" name="signup-username" required>
+
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" name="signup-email" required>
+
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" name="signup-password" required>
+
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="#" id="show-signin">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner">
+        <div class="banner-text">
+            <h1 id="banner-title">Welcome to Book world</h1>
+            <p id="banner-description">Feel free to select your favourite book</p>
+            <button>Buy Now</button>
+        </div>
+    </section>
+
+    <!-- Latest Releases Section -->
+    <section class="latest-releases">
+        <h2>Latest Releases</h2>
+        <div class="book-items">
+            <div class="book-item" data-title="Doglapan" data-description="This is the unfettered story of Ashneer Grover-the favourite and misunderstood poster boy of Start-up India.
+            Raw, gut-wrenching in its honesty and completely from the heart, this is storytelling at its finest."
+                data-image="https://images.thequint.com/thequint%2F2022-03%2F2e572061-4d95-4c7e-8fdb-05d676b040cc%2FUntitled_design___2022_03_01T131833_672.jpg?rect=0%2C0%2C1920%2C1080">
+                <img src="https://m.media-amazon.com/images/I/81InFh0R4UL._AC_UF1000,1000_QL80_.jpg" alt="Book 1">
+                <p>Doglapan</p>
+            </div>
+            <div class="book-item" data-title="The India Way"
+                data-description="The India Way: Strategies for an Uncertain World by Jaishankar provides a comprehensive analysis of India's geopolitical strategy since independence. The book delves into India's historical statecraft, the impact of colonization, and the country's journey towards rediscovering its unique identity in the global arena."
+                data-image="https://images.yourstory.com/cs/2/11718bd02d6d11e9aa979329348d4c3e/247Life-1715323682375.png?mode=crop&crop=faces&ar=2%3A1&format=auto&w=1920&q=75">
+                <img src="https://m.media-amazon.com/images/I/81mp3bdBitL._AC_UF1000,1000_QL80_.jpg" alt="Book 2">
+                <p>The India Way</p>
+            </div>
+            <div class="book-item" data-title="Ken Follett Never"
+                data-description="A thrilling political and historical fiction."
+                data-image="https://cdn.images.express.co.uk/img/dynamic/39/750x445/1517262.jpg">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1PebSqTs1p6o9snQlKwPoWc8kfWA03xLSrA&s"
+                    alt="Book 3">
+                <p>Ken Follett Never</p>
+            </div>
+            <div class="book-item" data-title="Sports Betting for Winners"
+                data-description="Tips and Tales from the New World of Sports Betting"
+                data-image="https://cdn.pmnewsnigeria.com/2020/04/Sports-Betting.jpg">
+                <img src="https://m.media-amazon.com/images/I/81zeNz77lwL._AC_UF1000,1000_QL80_.jpg" alt="Book 4 ">
+                <p>Sports Betting for Winners</p>
+            </div>
+
+            <div class="book-item" data-title="The Haunting of Delhi City"
+                data-description="Delhi city is a city filled with many ghost and many broken dreams."
+                data-image="https://sanjeevkotnala.com/wp-content/uploads/2023/01/HAUNTING-DELHI-1024x537.png">
+                <img src="https://m.media-amazon.com/images/I/81ggXazp+-L._AC_UY327_FMwebp_QL65_.jpg" alt="Book 5 ">
+                <p>The Haunting of Delhi City</p>
+            </div>
+            <div class="book-item" data-title="Dopamine Detox "
+                data-description="A Short Guide to Remove Distractions and Get Your Brain to Do Hard Things "
+                data-image="https://i.ytimg.com/vi/Z-nVjfMF8Y8/maxresdefault.jpg">
+                <img src="https://m.media-amazon.com/images/I/712K3sdLlRL._SY466_.jpg" alt="Book 5 ">
+                <p>Dopamine Detox</p>
+
+
+            </div>
+    </section>
+
+    <!--bestsellers Section -->
+    <section class="bestsellers">
+        <h2>Bestsellers</h2>
+        <div class="book-items">
+            <div class="book-item" data-title="George Orwell 1984"
+                data-description="1984: A Novel, unleashes a unique plot as per which No One is Safe or Free. No place is safe to run or even hide from a dominating party leader, Big Brother, who is considered equal to God. This is a situation where everything is owned by the State. The world was seeing the ruins of World War II. Leaders such as Hitler, Stalin and Mussolini prevailed during this phase. Big Brother is always watching your actions. He even controls everyone?s feelings of love, to live and to discover. The basic plot of this historic novel revolves around the concept that no person has freedom to live life on his or her own terms. The present day is 1984."
+                data-image="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1nW5Uy.img?w=768&h=403&m=6&x=300&y=320&s=360&d=360">
+                <img src="https://res.cloudinary.com/bookbub/image/upload/t_ci_ar_6:9_padded,f_auto,q_auto,dpr_1,c_scale,w_405/v1683254648/pro_pbid_3127.jpg"
+                    alt="Book 4">
+                <p>George Orwell 1984</p>
+            </div>
+            <div class="book-item" data-title="The Book Thief"
+                data-description="The Book Thief is a story narrated by a compassionate Death who tells us about Liesel, a girl growing up in Germany during World War II. She steals books, learns to read, and finds comfort in words. She and Max, the Jew her family protects, are the only main characters that survive the war."
+                data-image="https://static01.nyt.com/images/2013/11/08/arts/08BOOKTHIEF_SPAN/BOOKTHIEF-superJumbo.jpg">
+                <img src="https://res.cloudinary.com/bookbub/image/upload/t_ci_ar_6:9_padded,f_auto,q_auto,dpr_1,c_scale,w_405/v1659824881/pro_pbid_825589.jpg"
+                    alt="Book 5">
+                <p>The Book Thief</p>
+            </div>
+            <div class="book-item" data-title="Think and Grow Rich by Napoleon Hill"
+                data-description="The Think and Grow Rich summary's core idea is that if you can control your mind, you can control your destiny. Every chapter is packed with insights that change how you think about money, people, psychology, and the self, regardless of your profession and business."
+                data-image="https://i0.wp.com/apeejay.news/wp-content/uploads/2023/10/281023-10-most-read-books-Blog-4.jpg?w=768&ssl=1">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/kqjtd3k0/book/0/s/p/think-grow-rich-original-imag4jgm75ravh7f.jpeg?q=90&crop=false"
+                    alt="Book 5">
+                <p>Think and Grow Rich by Napoleon Hill</p>
+            </div>
+            <div class="book-item" data-title="The Alchemist"
+                data-description="The Alchemist is a novel written by Brazilian author Paulo Coelho that was first published in 1988. It has since become an international bestseller having sold over 65 million copies. The masterpiece tells the magical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure as extravagant as any ever found. The story of the treasures Santiago finds along the way teaches us, as only a few stories can, about the essential wisdom of listening to our hearts, learning to read the omens strewn along life’s path, and, above all, following our dreams."
+                data-image="https://static.tnn.in/thumb/msid-107219031,thumbsize-1634897,width-1280,height-720,resizemode-75/107219031.jpg?quality=100">
+                <img src="https://m.media-amazon.com/images/I/61HAE8zahLL._AC_UF1000,1000_QL80_.jpg" alt="Book 6">
+                <p>The Alchemist</p>
+            </div>
+            <div class="book-item" data-title="The Diary of a Young Girl"
+                data-description="The Diary of a Young Girl, commonly referred to as The Diary of Anne Frank, is a book of the writings from the Dutch-language diary kept by Anne Frank while she was in hiding for two years with her family during the Nazi occupation of the Netherlands. The family was apprehended in 1944, and Anne Frank died of typhus in the Bergen-Belsen concentration camp in 1945. Anne's diaries were retrieved by Miep Gies and Bep Voskuijl. Miep gave them to Anne's father, Otto Frank, the family's only survivor, just after the Second World War was over."
+                data-image="https://m.media-amazon.com/images/S/pv-target-images/3f4b73429580fa67f830069cc5a109069610204b1d7c4cf0d7a184898c7930fc.jpg">
+                <img src="https://m.media-amazon.com/images/I/91y5XODFZ+L._AC_UF1000,1000_QL80_.jpg" alt="Book 7">
+                <p>The Diary of a Young Girl</p>
+            </div>
+            <div class="book-item" data-title="Gone with the wind"
+                data-description="A dystopian classic about totalitarianism."
+                data-image="https://www.bookishelf.com/wp-content/uploads/2020/01/Book-Review-Gone-With-The-Wind-by-Margaret-Mitchell.png">
+                <img src="https://m.media-amazon.com/images/I/41AYi46GQkL.jpg" alt="Book 8">
+                <p>Gone with the wind</p>
+            </div>
+    </section>
+
+    <section class="bestsellers">
+        <div class="book-items">
+            <div class="book-item" data-title="A tale of two cities"
+                data-description="A Tale of Two Cities is a historical novel published in 1859 by Charles Dickens, set in London and Paris before and during the French Revolution. The novel tells the story of the French Doctor Manette, his 18-year-long imprisonment in the Bastille in Paris, and his release to live in London with his daughter Lucie whom he had never met. The story is set against the conditions that led up to the French Revolution and the Reign of Terror."
+                data-image="https://englishpluspodcast.com/wp-content/uploads/2023/02/A-Tale-of-Two-Cities-1.jpg">
+                <img src="https://m.media-amazon.com/images/I/71CQFGiPA+L._AC_UF1000,1000_QL80_.jpg" alt="Book 9">
+                <p>A tale of two cities</p>
+            </div>
+            <div class="book-item" data-title="The Kite Runner" data-description=" THE KITE RUNNNER by Khaled Hosseini
+                tells a touching story about friendship, betrayal, and making things right, all set against the backdrop
+                of Afghanistan's troubled past. The book follows the lives of two boys, Amir and Hassan, in Kabul. Amir
+                is rich, while Hassan is the son of Amir's father's servant. Their strong bond is tested by jealousy and
+                the differences in their social status. The story unfolds over many years and places, showing how guilt
+                can weigh heavily on someone and how love can endure through tough times. With its powerful storytelling
+                and relatable characters, It teaches us about forgiveness and redemption, things everyone
+                longs for."
+                data-image="https://m.media-amazon.com/images/M/MV5BMjA0NDg4ODE5MV5BMl5BanBnXkFtZTYwNjIwMDM3._V1_QL75_UX1230_.jpg">
+                <img src="https://m.media-amazon.com/images/I/81IzbD2IiIL._AC_UF1000,1000_QL80_.jpg" alt="Book 10">
+                <p>The Kite Runner</p>
+            </div>
+            <div class="book-item" data-title="Quotations from Chairman Mao Tse-Tung"
+                data-description="The Little Red Book, also called Quotations from Chairman Mao Tse-Tung, is a book filled with quotes and speeches by Mao Zedong, the former leader of the Chinese Communist Party. It was meant to guide party members and soldiers, but during the Cultural Revolution, it became really famous. Lots of people in China and other countries read it. Even though it's not as popular now, Mao's ideas about revolution, socialism, and running a country still interest historians, scholars, and people who like politics."
+                data-image="https://media.gettyimages.com/id/530194111/photo/propaganda-poster-for-the-chinese-peoples-liberation-army-with-red-army-and-red-guard-members.jpg?s=612x612&w=0&k=20&c=nYKtYoJKoANk1NbOxhwuzzfwIQNR1o_trzJ82RgIjPU=">
+                <img src="https://m.media-amazon.com/images/I/61BFnU2XiqL._AC_UF1000,1000_QL80_.jpg" alt="Book 11">
+                <p>Quotations from Chairman Mao Tse-Tung</p>
+            </div>
+            <div class="book-item" data-title="END GAME"
+                data-description="The story is told in a way that is impossible not to have dual feelings towards Bobby: you both love and hate him. You both love his obsession with the game of chess and hate the madness by which he faces many aspects of his life. It could not be different though, we all have a little bit of Dr. Jekill and Mr."
+                data-image="https://i.ytimg.com/vi/ogyxwNRh33k/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAvv8kAsh3HJaQK8o3dwkKnHx8MEg">
+                <img src="https://media.npr.org/assets/img/2011/01/27/endgame_custom-d64f95547ffbf8d9fef81901d7447d047672fb24.jpg?s=800&c=85&f=jpeg"
+                    alt="Book 8">
+                <p>END GAME</p>
+            </div>
+            <div class="book-item" data-title="To kill a Mocking Bird"
+                data-description="To Kill a Mockingbird is a novel by the American author Harper Lee. It was published in July 1960 and became instantly successful. In the United States, it is widely read in high schools and middle schools. To Kill a Mockingbird has become a classic of modern American literature; a year after its release, it won the Pulitzer Prize. The plot and characters are loosely based on Lee's observations of her family, her neighbors and an event that occurred near her hometown of Monroeville, Alabama, in 1936, when she was ten."
+                data-image="https://www.hollywoodreporter.com/wp-content/uploads/2018/12/to_kill_a_mockingbird-celia_keenan-bolger_and_jeff_daniels-publicity-h_2018.jpg">
+                <img src="https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UF1000,1000_QL80_.jpg" alt="Book 8">
+                <p>To kill a Mocking Bird</p>
+            </div>
+            <div class="book-item" data-title="The Silient Patient"
+                data-description="The Silent Patient is a 2019 psychological thriller novel written by British–Cypriot author Alex Michaelides. The successful debut novel was published by Celadon Books, a division of Macmillan Publishers, on 5 February 2019.[1] The audiobook version, released on the same date, is read by Louise Brealey and Jack Hawkins.[1] The story is narrated by an English psychotherapist, Theo Faber, dealing with a patient who turns mute after murdering her husband. Upon its release, the book debuted on The New York Times Best Seller list at No.1.[2] It later won the Goodreads Choice Award 2019 in the Mystery and Thriller category."
+                data-image="https://just-read-it.com/wp-content/uploads/2021/07/blog-cover-photo-just-read-it-2.png?w=1200">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1668782119i/40097951.jpg"
+                    alt="Book 8">
+                <p>The Silient Patient</p>
+            </div>
+    </section>
+
+    <section class="Featured">
+        <h2>Featured Books</h2>
+        <div class="book-items">
+
+            <div class="book-item" data-title="Harry potter and the cursed child book" data-description="Harry Potter and the Cursed Child is a play written by Jack Thorne from an original story by Thorne, J. K. Rowling and John Tiffany. The plot occurs nineteen years after the events of Rowling's novel Harry Potter and the Deathly Hallows. It follows Albus Severus Potter, the son of Harry Potter, who is now Head of the Department of Magical Law Enforcement at the Ministry of Magic. When Albus arrives at Hogwarts, he gets sorted into Slytherin, and fails to live up to his father's legacy, making him resentful of his father. Rowling has referred to the play as
+                the eighth Harry Potter story."
+                data-image="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/07/25/17/harry-potter-cursed-child-2-0.jpg">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/book/j/v/b/harry-potter-and-the-cursed-child-parts-one-and-two-original-imahfprftu6hb6ga.jpeg?q=90&crop=false"
+                    alt="Book 8">
+                <p>Harry potter and the cursed child book</p>
+            </div>
+            <div class="book-item" data-title="The Amazing-Spiderman"
+                data-description="The Amazing Spider-Man is a comic book series that follows the adventures of Peter Parker, a young man who gains superhuman abilities after being bitten by a radioactive spider. The core of the story revolves around Peter balancing his personal life, responsibilities, and his role as the masked superhero, Spider-Man."
+                data-image="https://static0.srcdn.com/wordpress/wp-content/uploads/wm/2024/09/amazing-spiderman-andrew-garfield.jpg">
+                <img src="https://www.7ate9comics.com/cdn/shop/products/7-ate-9-comics-comic-amazing-spider-man-1-facsimile-edition-skan-srisuwan-variant-cover-ltd-to-600-copies-with-coa-38132547191010.jpg?v=1663124514"
+                    alt="Book 5 ">
+                <p>The Amazing-Spiderman</p>
+            </div>
+
+            <!-- <div class="book-item" data-title="Ben 10 Ultimate Alien Annual 2012"
+                data-description="In the Ben 10 Ultimate Alien Annual 2012, 16-year-old Ben is now a world-famous hero, and his alien-transforming powers attract villains jealous of his abilities. Equipped with the new **Ultimatrix**, Ben can transform into brand-new aliens and upgrade his existing ones into more powerful **Ultimate** forms, like the stronger **Ultimate Humungousaur**. The book features comic stories, activities, puzzles, and profiles of fan-favorite aliens, as Ben, Gwen, and Kevin team up to fight enemies in action-packed adventures."
+                data-image="https://i.redd.it/3581ieh69pbc1.jpeg">
+                <img src="https://image.tmdb.org/t/p/original/lcpZhrGSQyCr7VmzeuUt3kEuuQI.jpg" alt="Book 8">
+                <p>Ben 10 Ultimate Alien Annual 2012</p>
+            </div> -->
+
+            <div class="book-item" data-title="Where the Crawdads Sing"
+                data-description="Where the Crawdads Sing is a 2018 coming-of-age[2][3] murder mystery novel by American zoologist Delia Owens.[4] The story follows two timelines that slowly intertwine. The first timeline describes the life and adventures of a young girl named Kya as she grows up isolated in the marshes of North Carolina. The second timeline follows an investigation into the apparent murder of Chase Andrews, a local celebrity of Barkley Cove, a fictional coastal town of North Carolina."
+                data-image="https://static1.srcdn.com/wordpress/wp-content/uploads/2022/07/where-the-crawdads-sing-ending-explained.jpg">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582135294i/36809135.jpg"
+                    alt="Book 5 ">
+                <p>Where the Crawdads Sing</p>
+            </div>
+
+            <div class="book-item" data-title="The Night Circus" data-description="The Night Circus-weaves a tale of
+                love, destiny, and the clash between two magical worlds, all set against the backdrop of a bewitching
+                and ever-changing circus. The novel explores themes of creativity, sacrifice, and the enduring power of
+                love in a beautifully crafted and atmospheric narrative."
+                data-image="https://images.squarespace-cdn.com/content/v1/551d7758e4b0aef7d279a34d/1530022757865-Z1AZENBMRL9YX52O7ZJI/Kornacki_NightCirus_Process.jpg">
+                <img src="https://m.media-amazon.com/images/I/71+whvJjE3L._AC_UF1000,1000_QL80_.jpg" alt="Book 8">
+                <p>The Night Circus</p>
+            </div>
+
+            <div class="book-item" data-title="The Lord of the Rings"
+                data-description="The Lord of the Rings, fantasy novel by J.R.R. Tolkien initially published in three parts as The Fellowship of the Ring (1954), The Two Towers (1955), and The Return of the King (1955). The novel, set in the Third Age of Middle-earth, formed a sequel to Tolkien’s The Hobbit (1937) and was succeeded by his posthumous The Silmarillion (1977). The Lord of the Rings is the saga of a group of sometimes reluctant heroes who set forth to save their world from consummate evil. Its many worlds and creatures were drawn from Tolkien’s extensive knowledge of philology and folklore."
+                data-image="https://www.denofgeek.com/wp-content/uploads/2023/02/lord-of-the-rings-return-of-the-king.jpg">
+                <img src="https://pagdandi.org/wp-content/uploads/2024/01/9780008537760.jpg" alt="Book 5 ">
+                <p>The Lord of the Rings</p>
+            </div>
+
+            <div class="book-item" data-title="Educated" data-description=" Educated- is a powerful and compelling
+                memoir that explores themes of family, education, self-discovery, and the enduring impact of one's
+                upbringing. Tara Westover's journey from a sheltered and uneducated upbringing to academic success and
+                personal growth serves as an inspirational and thought-provoking narrative"
+                data-image="https://www.sallyflint.com/wp-content/uploads/2020/02/educated_orig.jpg">
+                <img src="https://m.media-amazon.com/images/I/71-4MkLN5jL._AC_UF1000,1000_QL80_.jpg" alt="Book 8">
+                <p>Educated</p>
+            </div>
+    </section>
+
+    <section class="Featured">
+        <h2>Featured Books</h2>
+        <div class="book-items">
+            
+        </section>
+
+
+    <script src="book.js"></script>
+</body>
+
+</html>
