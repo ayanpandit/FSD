@@ -276,6 +276,8 @@ section h2 {
     margin: 0 auto;
     position: relative;
     animation: pulse-glow 4s ease-in-out infinite;
+    overflow: hidden; /* added: ensure image is clipped to circle */
+    padding: 4px; /* optional: creates subtle inner spacing so ::before glow shows */
 }
 
 .profile-image-enhanced::before {
@@ -289,6 +291,16 @@ section h2 {
     border-radius: 50%;
     z-index: -1;
     animation: gradient-animation 4s linear infinite;
+}
+
+.profile-image-enhanced img.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    /* optional subtle inner border to separate image from glow */
+    box-shadow: inset 0 0 0 4px rgba(15,15,26,0.6);
 }
 
 #about .space-y-8 {
@@ -911,9 +923,13 @@ footer .text-sm {
         <div class="container mx-auto max-w-7xl">
             <h2 class="text-5xl md:text-7xl font-bold text-center mb-20 animated-text">🌟 About Me</h2>
             <div class="grid md:grid-cols-2 gap-16 items-center">
+              
                 <div class="profile-image-enhanced">
-                    AY
+                 
+                  <!-- Replace the src below with your actual image filename/path -->
+                  <img src="./mypic.jpeg" alt="Alok Yadav" class="profile-photo">
                 </div>
+
                 <div class="space-y-8">
                     <div class="glass-morphism p-8 rounded-2xl">
                         <p class="text-xl leading-relaxed mb-6">
