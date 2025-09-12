@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -373,6 +374,28 @@ section h2 {
 #skills .card-hover p {
     font-size: clamp(0.75rem, 1.8vw, 0.8rem);
     margin-bottom: 1rem;
+}
+
+/* Skills progress bars */
+#skills .skill-progress {
+    width: 100%;
+    height: 8px;
+    background: #374151; /* gray-700 */
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+#skills .skill-progress-bar {
+    height: 100%;
+    width: 0%;
+    background-image: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+    background-size: 200% 100%;
+    border-radius: 9999px;
+    transition: width 1.2s ease-out, background-position 2s ease;
+}
+
+#skills .skill-progress-bar.is-animated {
+    background-position: 100% 0;
 }
 
 /* Projects Section Responsive */
@@ -939,64 +962,64 @@ footer .text-sm {
                     <div class="skill-icon-3d">🎨</div>
                     <h3 class="text-xl font-semibold mb-3 text-neon-blue">Spline</h3>
                     <p class="text-sm text-gray-400 mb-4">3D Design Master</p>
-                    <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple h-2 rounded-full" style="width: 95%"></div>
+                    <div class="skill-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Spline skill" data-progress="95">
+                        <div class="skill-progress-bar"></div>
                     </div>
                 </div>
                 <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
                     <div class="skill-icon-3d" style="animation-delay: 0.5s;">🎯</div>
                     <h3 class="text-xl font-semibold mb-3 text-neon-purple">Figma</h3>
                     <p class="text-sm text-gray-400 mb-4">UI/UX Wizard</p>
-                    <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-neon-purple to-neon-pink h-2 rounded-full" style="width: 90%"></div>
+                    <div class="skill-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Figma skill" data-progress="90">
+                        <div class="skill-progress-bar"></div>
                     </div>
                 </div>
                 <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
                     <div class="skill-icon-3d" style="animation-delay: 1s;">⚡</div>
                     <h3 class="text-xl font-semibold mb-3 text-neon-pink">Framer</h3>
                     <p class="text-sm text-gray-400 mb-4">Prototype Ninja</p>
-                    <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-neon-pink to-neon-blue h-2 rounded-full" style="width: 85%"></div>
+                    <div class="skill-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Framer skill" data-progress="85">
+                        <div class="skill-progress-bar"></div>
                     </div>
                 </div>
                 <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
                     <div class="skill-icon-3d" style="animation-delay: 1.5s;">⚛️</div>
                     <h3 class="text-xl font-semibold mb-3 text-neon-blue">React</h3>
                     <p class="text-sm text-gray-400 mb-4">Frontend Architect</p>
-                    <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple h-2 rounded-full" style="width: 88%"></div>
+                    <div class="skill-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="React skill" data-progress="88">
+                        <div class="skill-progress-bar"></div>
                     </div>
                 </div>
                 <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
                     <div class="skill-icon-3d" style="animation-delay: 2s;">🌐</div>
                     <h3 class="text-xl font-semibold mb-3 text-neon-purple">HTML5</h3>
                     <p class="text-sm text-gray-400 mb-4">Structure Expert</p>
-                    <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-neon-purple to-neon-pink h-2 rounded-full" style="width: 92%"></div>
+                    <div class="skill-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 skill" data-progress="92">
+                        <div class="skill-progress-bar"></div>
                     </div>
                 </div>
                 <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
                     <div class="skill-icon-3d" style="animation-delay: 2.5s;">🎨</div>
                     <h3 class="text-xl font-semibold mb-3 text-neon-pink">CSS3</h3>
                     <p class="text-sm text-gray-400 mb-4">Style Magician</p>
-                    <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-neon-pink to-neon-blue h-2 rounded-full" style="width: 90%"></div>
+                    <div class="skill-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 skill" data-progress="90">
+                        <div class="skill-progress-bar"></div>
                     </div>
                 </div>
                 <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
                     <div class="skill-icon-3d" style="animation-delay: 3s;">📊</div>
                     <h3 class="text-xl font-semibold mb-3 text-neon-blue">Power BI</h3>
                     <p class="text-sm text-gray-400 mb-4">Data Analyst</p>
-                    <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple h-2 rounded-full" style="width: 78%"></div>
+                    <div class="skill-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Power BI skill" data-progress="78">
+                        <div class="skill-progress-bar"></div>
                     </div>
                 </div>
                 <div class="card-hover glass-morphism p-8 rounded-2xl text-center">
                     <div class="skill-icon-3d" style="animation-delay: 3.5s;">📈</div>
                     <h3 class="text-xl font-semibold mb-3 text-neon-purple">Data Viz</h3>
                     <p class="text-sm text-gray-400 mb-4">Story Teller</p>
-                    <div class="w-full bg-gray-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-neon-purple to-neon-pink h-2 rounded-full" style="width: 82%"></div>
+                    <div class="skill-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Data Visualization skill" data-progress="82">
+                        <div class="skill-progress-bar"></div>
                     </div>
                 </div>
             </div>
@@ -1336,6 +1359,32 @@ footer .text-sm {
                 el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
                 observer.observe(el);
             });
+
+            // Animate skills progress bars when skills section enters viewport
+            const skillsSection = document.querySelector('#skills');
+            const progressBars = skillsSection ? skillsSection.querySelectorAll('.skill-progress') : [];
+            if (skillsSection && progressBars.length) {
+                const skillsObserver = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            progressBars.forEach(wrapper => {
+                                const value = parseInt(wrapper.getAttribute('data-progress') || '0', 10);
+                                const bar = wrapper.querySelector('.skill-progress-bar');
+                                if (bar) {
+                                    // Trigger layout so transition runs
+                                    bar.style.width = '0%';
+                                    requestAnimationFrame(() => {
+                                        bar.classList.add('is-animated');
+                                        bar.style.width = Math.max(0, Math.min(100, value)) + '%';
+                                    });
+                                }
+                            });
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+                skillsObserver.observe(skillsSection);
+            }
         });
     </script>
 </body>
