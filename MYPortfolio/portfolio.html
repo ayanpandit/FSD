@@ -31,6 +31,7 @@ body {
     background: var(--dark-bg);
     color: var(--text-light);
     overflow-x: hidden;
+    overflow-y: scroll; /* reserve scrollbar space to avoid layout shift */
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
@@ -755,6 +756,53 @@ footer .text-sm {
         inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
+/* Make images/media responsive and prevent overflow */
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Avoid mobile hover jank: only apply hover transforms when hover is supported */
+@media (hover: none) {
+    .card-hover:hover {
+        transform: none;
+        box-shadow: 
+            0 10px 20px rgba(0, 229, 255, 0.1),
+            0 0 12px rgba(142, 45, 226, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+    .navbar a:hover {
+        transform: none;
+        text-shadow: none;
+    }
+}
+
+/* Respect reduced motion preferences to reduce jank */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Prevent layout shift from long words on small screens */
+.container, section, .glass-morphism, .card-hover {
+    overflow-wrap: anywhere;
+}
+
+/* Guard against small-screen overflow and padding squeeze */
+@media (max-width: 480px) {
+    html, body {
+        width: 100%;
+    }
+    nav .animated-text {
+        letter-spacing: -0.03em;
+    }
+}
+
 /* Responsive Breakpoints */
 @media (min-width: 640px) {
     .container {
@@ -1332,6 +1380,9 @@ footer .text-sm {
     <script>
         // Add smooth scrolling and interactive elements
         document.addEventListener('DOMContentLoaded', function() {
+            // Prevent layout shift when scrollbars appear/disappear
+            // Only applies if OS uses overlay scrollbars off; harmless otherwise
+            document.documentElement.style.setProperty('scrollbar-gutter', 'stable both-edges');
             // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
