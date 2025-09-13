@@ -38,3 +38,4 @@ If an image is missing, the project visual will show the original gradient backg
 - Show the most impressive or representative part of each project
 - Ensure images are well-lit and professional-looking
 - Consider adding subtle branding or project logos
+
